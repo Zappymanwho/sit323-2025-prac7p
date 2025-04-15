@@ -70,6 +70,10 @@ app.get("/Divide", (req, res) => {
     }
 });
 const port=3060;
+app.get('/', (req, res) => {
+    res.send('Hello from Kubernetes!');
+  });
+
 app.listen(port,()=> {
     console.log("I'm listening to this port here"+port);
 })
