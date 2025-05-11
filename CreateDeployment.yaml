@@ -14,6 +14,17 @@ spec:
     spec:
       containers:
       - name: nodejs-container
-        image: zappymanwho/sit323-prac6p
+        image: zappymanwho/sit323-prac7p  
         ports:
         - containerPort: 3060
+        env:
+        - name: MONGO_USER
+          valueFrom:
+            secretKeyRef:
+              name: mongodbsecretcred    
+              key: mongo-user
+        - name: MONGO_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongodbsecretcred
+              key: mongo-password
